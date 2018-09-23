@@ -42,7 +42,7 @@ void MCP3X21::init() {
 }
 
 uint16_t MCP3X21::read() {
-    _i2c->requestFrom(_address, 2);
+    _i2c->requestFrom(_address, 2U);
 
     if (_i2c->available() == 2) {
         return ((_i2c->read() << 8) | _i2c->read());
