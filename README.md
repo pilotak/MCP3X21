@@ -1,6 +1,7 @@
 # Arduino library for MCP3021 & MCP3021 I2C ADC
 [![Build Status](https://travis-ci.org/pilotak/MCP3X21.svg?branch=master)](https://travis-ci.org/pilotak/MCP3X21) [![Framework Badge Arduino](https://img.shields.io/badge/framework-arduino-00979C.svg)](https://arduino.cc)
 
+## Example
 ```cpp
 #include <Wire.h>
 #include "MCP3X21.h"
