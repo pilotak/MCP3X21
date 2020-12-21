@@ -10,6 +10,10 @@ on:
 
 jobs:
   platformio-build:
+    strategy:
+      matrix:
+        type: ["MCP3221", "MCP3021"]
+
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -25,11 +29,11 @@ jobs:
           python -m pip install --upgrade pip
           pip install --upgrade platformio
 
-      - name: Compile
+      - name: Compile ${{ matrix.type }}
         run: |
           pio ci --lib="." --board=uno --board=zero --board=esp8285 --board=esp32dev --board=bluepill_f103c8
         env:
-          PLATFORMIO_CI_SRC: examples/MCP3021:examples/MCP3221
+          PLATFORMIO_CI_SRC: examples/${{ matrix.type }}
 
   arduino-build:
     strategy:
