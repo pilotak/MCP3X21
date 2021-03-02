@@ -33,10 +33,10 @@ class MCP3X21 {
     ~MCP3X21(void);
     void init(TwoWire * i2c_obj);
     void init();
-    uint16_t toVoltage() = 0;
+    virtual uint16_t toVoltage() = 0;
 
   protected:
-    uint16_t read()=0;
+    virtual uint16_t read()=0;
     TwoWire * _i2c;
     const uint8_t _address;
     
