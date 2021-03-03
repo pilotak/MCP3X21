@@ -33,21 +33,24 @@ class MCP3X21 {
     ~MCP3X21(void);
     void init(TwoWire * i2c_obj);
     void init();
-    uint16_t read();
-
+    
   protected:
+    uint16_t read();
     TwoWire * _i2c;
     const uint8_t _address;
+    
 };
 
 class MCP3021 : public MCP3X21 {
   public:
+    uint16_t read();
     explicit MCP3021(uint8_t slave_adr = MCP3X21_DEFAULT_ADDRESS);
     uint16_t toVoltage(uint16_t data, uint32_t vref);
 };
 
 class MCP3221 : public MCP3X21 {
   public:
+    uint16_t read();
     explicit MCP3221(uint8_t slave_adr = MCP3X21_DEFAULT_ADDRESS);
     uint16_t toVoltage(uint16_t data, uint32_t vref);
 };
