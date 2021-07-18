@@ -9,7 +9,7 @@ MCP3021 mcp3021(address);
 void setup() {
     Serial.begin(115200);
 
-#if defined(ESP8266)
+#if defined(ESP8266) || defined(ESP32)
     Wire.begin(SDA, SCL);
     mcp3021.init(&Wire);
 #else

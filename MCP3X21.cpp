@@ -66,7 +66,7 @@ MCP3021::MCP3021(uint8_t slave_adr):
 }
 
 uint16_t MCP3021::toVoltage(uint16_t data, uint32_t vref) {
-    return (vref * data / 1023);
+    return (vref * data / 1024);
 }
 
 MCP3221::MCP3221(uint8_t slave_adr):
@@ -74,5 +74,5 @@ MCP3221::MCP3221(uint8_t slave_adr):
 }
 
 uint16_t MCP3221::toVoltage(uint16_t data, uint32_t vref) {
-    return (vref * data / 4095);
+    return (vref * data / 4096);
 }
